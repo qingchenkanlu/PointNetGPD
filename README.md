@@ -133,6 +133,28 @@ https://github.com/navjot95/pointNetGraspClassifier/issues/1#issuecomment-520356
     python generate-dataset-canny.py [prefix]
     ```
     where ```[prefix]``` is the optional, it will add a prefix on the generated files.
+File "/usr/local/lib/python2.7/dist-packages/traitsui/qt4/constants.py", line 27, in 
+_palette = QtGui.QApplication.palette()
+TypeError: palette() takes exactly one argument (0 given)
+
+解决：装了个PySide就不报这个错了
+Ubuntu上的安装方法：
+sudo add-apt-repository ppa:pyside
+sudo apt-get update
+sudo apt-get install python-pyside
+
+Traceback (most recent call last):
+  File "read_file_sdf.py", line 62, in <module>
+    generate_obj_from_ply(i+"/google_512k/nontextured.ply")
+  File "read_file_sdf.py", line 48, in generate_obj_from_ply
+    p = subprocess.Popen(["pcl_ply2obj", base + ".ply", base + ".obj"])
+  File "/usr/lib/python2.7/subprocess.py", line 711, in __init__
+    errread, errwrite)
+  File "/usr/lib/python2.7/subprocess.py", line 1343, in _execute_child
+    raise child_exception
+OSError: [Errno 2] No such file or directory
+
+安装pcl-tool   http://manpages.ubuntu.com/manpages/xenial/man1/pcl_ply2obj.1.html
 
 ## Visualization tools
 - Visualization grasps
