@@ -133,16 +133,19 @@ https://github.com/navjot95/pointNetGraspClassifier/issues/1#issuecomment-520356
     python generate-dataset-canny.py [prefix]
     ```
     where ```[prefix]``` is the optional, it will add a prefix on the generated files.
+
+
 File "/usr/local/lib/python2.7/dist-packages/traitsui/qt4/constants.py", line 27, in 
 _palette = QtGui.QApplication.palette()
 TypeError: palette() takes exactly one argument (0 given)
 
 解决：装了个PySide就不报这个错了
 Ubuntu上的安装方法：
+```bash
 sudo add-apt-repository ppa:pyside
 sudo apt-get update
 sudo apt-get install python-pyside
-
+```
 Traceback (most recent call last):
   File "read_file_sdf.py", line 62, in <module>
     generate_obj_from_ply(i+"/google_512k/nontextured.ply")
