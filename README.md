@@ -115,6 +115,18 @@ cd $HOME/code/
     cd $HOME/code/grasp-pointnet/dex-net/apps
     python read_file_sdf.py
     ```
+Traceback (most recent call last):
+  File "read_file_sdf.py", line 68, in <module>
+    generate_obj_from_ply(i+"/google_512k/nontextured.ply")
+  File "read_file_sdf.py", line 52, in generate_obj_from_ply
+    p = subprocess.Popen(["pcl_ply2obj", base + ".ply", base + ".obj"])
+  File "/usr/lib/python2.7/subprocess.py", line 711, in __init__
+    errread, errwrite)
+  File "/usr/lib/python2.7/subprocess.py", line 1343, in _execute_child
+    raise child_exception
+OSError: [Errno 2] No such file or directory
+https://github.com/navjot95/pointNetGraspClassifier/issues/1#issuecomment-520356614
+
 5. Generate dataset by running the code:
     ```bash
     cd $HOME/code/grasp-pointnet/dex-net/apps
